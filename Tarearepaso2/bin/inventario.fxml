@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <MenuBar fx:id="menu" layoutX="1.0" layoutY="1.0" prefHeight="3.0" prefWidth="600.0">
+        <menus>
+          <Menu fx:id="menuArchivo" mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem fx:id="opNuevoProducto" mnemonicParsing="false" onAction="#initialize" text="Nuevo Producto" />
+              <MenuItem fx:id="opGuardar" mnemonicParsing="false" onAction="#initialize" text="Guardar" />
+              <MenuItem fx:id="opCargar" mnemonicParsing="false" onAction="#initialize" text="Cargar" />
+              <MenuItem fx:id="opSalir" mnemonicParsing="false" onAction="#initialize" text="Salir" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuEditar" mnemonicParsing="false" text="Editar">
+            <items>
+              <MenuItem fx:id="opEliminar" mnemonicParsing="false" onAction="#Eliminar" text="Eliminar seleccionado" />
+              <MenuItem fx:id="opLimpiar" mnemonicParsing="false" text="Limpiar lista" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuAyuda" mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem fx:id="opAcercaDe" mnemonicParsing="false" text="Acerca de" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+
+      <TableView fx:id="tabla" layoutX="1.0" layoutY="23.0" prefHeight="200.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="colNombre" prefWidth="180.0" text="Nombre" />
+          <TableColumn fx:id="colCategoria" prefWidth="150.0" text="Categoria" />
+          <TableColumn fx:id="colPrecio" prefWidth="130.0" text="Precio" />
+          <TableColumn fx:id="colCantidad" prefWidth="138.0" text="Cantidad" />
+        </columns>
+      </TableView>
+
+      <Label layoutX="21.0" layoutY="235.0" text="Nombre:" />
+      <TextField fx:id="fieldNombre" layoutX="90.0" layoutY="231.0" prefWidth="150.0" promptText="Ej: Laptop" />
+
+      <Label layoutX="255.0" layoutY="235.0" text="Categoria:" />
+      <TextField fx:id="fieldCategoria" layoutX="320.0" layoutY="231.0" prefWidth="150.0" promptText="Ej: Electronica" />
+
+      <Label layoutX="21.0" layoutY="265.0" text="Precio:" />
+      <TextField fx:id="fieldPrecio" layoutX="90.0" layoutY="261.0" prefWidth="150.0" promptText="Ej: 1200.00" />
+
+      <Label layoutX="255.0" layoutY="265.0" text="Cantidad:" />
+      <TextField fx:id="fieldCantidad" layoutX="320.0" layoutY="261.0" prefWidth="150.0" promptText="Ej: 5" />
+
+      <Button fx:id="btnAgregar" layoutX="480.0" layoutY="231.0" mnemonicParsing="false" onAction="#initialize" prefWidth="90.0" text="Agregar" />
+      <Button fx:id="btnEliminar" layoutX="480.0" layoutY="261.0" mnemonicParsing="false" onAction="#initialize" prefWidth="90.0" text="Eliminar" />
+      <Button fx:id="btonGuardarArchivo" layoutX="59.0" layoutY="300.0" mnemonicParsing="false" onAction="#initialize" prefWidth="90.0" text="Guardar" />
+      <Button fx:id="btonCargar" layoutX="160.0" layoutY="300.0" mnemonicParsing="false" onAction="#initialize" prefWidth="90.0" text="Cargar" />
+
+      <ProgressBar fx:id="barraProgreso" layoutX="21.0" layoutY="338.0" prefHeight="18.0" prefWidth="558.0" progress="0.0" />
+      <Label fx:id="estadoBarra" layoutX="21.0" layoutY="358.0" prefHeight="18.0" prefWidth="558.0" textFill="#848484" />
+
+   </children>
+</Pane>
